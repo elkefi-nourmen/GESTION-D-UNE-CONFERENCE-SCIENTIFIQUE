@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="646.0" prefWidth="1115.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="conferencemanager.AccueilpresidentController">
+   <children>
+      <Pane layoutX="-6.0" layoutY="-8.0" prefHeight="100.0" prefWidth="949.0" styleClass="background2" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="116.0" fitWidth="166.0" layoutX="21.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="260.0" layoutY="22.0" mnemonicParsing="false" onAction="#visible1" prefHeight="51.0" prefWidth="194.0" styleClass="button2" text="Conférences">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button layoutX="991.0" layoutY="22.0" mnemonicParsing="false" onAction="#sortir" styleClass="button2" text="sortir">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button layoutX="540.0" layoutY="22.0" mnemonicParsing="false" onAction="#visible2" prefHeight="56.0" prefWidth="293.0" styleClass="button2" text="Nouvelle conférence">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="paneconf" layoutY="100.0" prefHeight="545.0" prefWidth="1115.0" AnchorPane.bottomAnchor="0.7999999999999545" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <TableView fx:id="tabconf" layoutX="69.0" layoutY="28.0" prefHeight="474.0" prefWidth="723.0">
+              <columns>
+                <TableColumn fx:id="idconf" prefWidth="30.39999485015869" text="id" />
+                <TableColumn fx:id="titreconf" prefWidth="80.80001449584961" text="titre" />
+                  <TableColumn fx:id="instconf" prefWidth="91.19998168945312" text="Institution" />
+                  <TableColumn fx:id="lieuconf" prefWidth="78.40003967285156" text="lieu" />
+                  <TableColumn fx:id="dureeconf" prefWidth="59.199951171875" text="duree" />
+                  <TableColumn fx:id="fraisconf" prefWidth="63.20001220703125" text="Frais" />
+                  <TableColumn fx:id="themesconf" prefWidth="106.39999389648438" text="themes" />
+                  <TableColumn fx:id="datesoumconf" prefWidth="104.79998779296875" text="date soumission" />
+                  <TableColumn fx:id="dateinscritconf" prefWidth="107.20001220703125" text="date inscription" />
+              </columns>
+            </TableView>
+            <Button layoutX="904.0" layoutY="39.0" mnemonicParsing="false" onAction="#modif_conf1" prefHeight="40.0" prefWidth="116.0" styleClass="rounded-button" text="Modifier" />
+            <Button layoutX="904.0" layoutY="100.0" mnemonicParsing="false" onAction="#supprimerconf" prefHeight="40.0" prefWidth="116.0" styleClass="rounded-button" text="Supprimer" />
+            <Button layoutX="904.0" layoutY="165.0" mnemonicParsing="false" onAction="#aficher_article" prefHeight="40.0" prefWidth="116.0" styleClass="rounded-button" text="Articles" />
+            <Button layoutX="904.0" layoutY="233.0" mnemonicParsing="false" onAction="#aff_keynotespeakers" prefHeight="40.0" prefWidth="116.0" styleClass="rounded-button" text="Notespeakers" />
+            <Button layoutX="904.0" layoutY="301.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="116.0" styleClass="rounded-button" text="Statistiques" />
+         </children>
+      </Pane>
+      <Pane fx:id="panenewconf" layoutX="-1.0" layoutY="99.0" prefHeight="545.0" prefWidth="1115.0" visible="false">
+         <children>
+            <Label fx:id="erreur" layoutX="837.0" layoutY="30.0" prefHeight="27.0" prefWidth="267.0" textFill="RED" />
+            <Label layoutX="802.0" layoutY="71.0" text="Ajouter une nouvelle conférence">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="857.0" layoutY="445.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="40.0" prefWidth="160.0" styleClass="rounded-button" text="Ajouter" />
+            <TextField fx:id="institutionc" layoutX="936.0" layoutY="118.0" promptText="Institution" style="-fx-background-radius: 15;" />
+            <TextField fx:id="dureec" layoutX="936.0" layoutY="158.0" promptText="duree" style="-fx-background-radius: 15;" />
+            <TextField fx:id="lieuc" layoutX="778.0" layoutY="158.0" promptText="lieu" style="-fx-background-radius: 15;" />
+            <TextField fx:id="titrec" layoutX="778.0" layoutY="118.0" promptText="titre" style="-fx-background-radius: 15;" />
+            <TextArea fx:id="themesc" layoutX="925.0" layoutY="249.0" prefHeight="100.0" prefWidth="160.0" promptText="themes" />
+            <DatePicker fx:id="datesoum" layoutX="798.0" layoutY="368.0" prefHeight="25.0" prefWidth="267.0" promptText="date limite de la soumission d'articles" />
+            <DatePicker fx:id="dateinscrit" layoutX="797.0" layoutY="403.0" prefHeight="25.0" prefWidth="267.0" promptText="date limite d'inscription" />
+            <TextField fx:id="fraisc" layoutX="936.0" layoutY="202.0" promptText="frais d'inscription" style="-fx-background-radius: 15;" />
+            <TableView fx:id="tabcomsci" layoutX="29.0" layoutY="84.0" prefHeight="217.0" prefWidth="250.0">
+              <columns>
+                <TableColumn fx:id="idcoms" prefWidth="127.99999618530273" text="id comite" />
+                <TableColumn fx:id="nomcoms" prefWidth="136.80003356933594" text="nom" />
+              </columns>
+            </TableView>
+            <Label layoutX="37.0" layoutY="44.0" text="liste des comites scientifiques">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="367.0" layoutY="44.0" text="liste des comites d'organisation">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tabcomorg" layoutX="373.0" layoutY="82.0" prefHeight="217.0" prefWidth="250.0">
+               <columns>
+                  <TableColumn fx:id="idcomo" prefWidth="127.20001220703125" text="id comite" />
+                  <TableColumn fx:id="nomcomo" prefWidth="135.20001220703125" text="nom" />
+               </columns>
+            </TableView>
+            <ComboBox fx:id="idcomsc" layoutX="777.0" layoutY="202.0" prefHeight="25.0" prefWidth="116.0" promptText="id comite sci" style="-fx-background-radius: 15;" />
+            <ComboBox fx:id="idcomoc" layoutX="779.0" layoutY="249.0" prefHeight="25.0" prefWidth="116.0" promptText="id comite org" style="-fx-background-radius: 15;" />
+            <Button layoutX="661.0" layoutY="445.0" mnemonicParsing="false" onAction="#modif_conf2" prefHeight="40.0" prefWidth="160.0" styleClass="rounded-button" text="Modifier" />
+         </children>
+      </Pane>
+      <Pane fx:id="keynotepane" layoutY="100.0" prefHeight="546.0" prefWidth="1115.0" visible="false">
+         <children>
+            <TextField fx:id="nomn" layoutX="69.0" layoutY="80.0" promptText="nom" />
+            <TextField fx:id="paysn" layoutX="69.0" layoutY="133.0" promptText="pays d'origine" />
+            <TextField fx:id="titren" layoutX="69.0" layoutY="188.0" promptText="titre de presentation" />
+            <TextField fx:id="institutionn" layoutX="69.0" layoutY="248.0" promptText="institution" />
+            <Button layoutX="60.0" layoutY="306.0" mnemonicParsing="false" onAction="#modif_keynote2" prefHeight="27.0" prefWidth="166.0" styleClass="rounded-button" text="Enregistrer modification" />
+            <Button layoutX="60.0" layoutY="351.0" mnemonicParsing="false" onAction="#ajouter_keynotespeaker" prefHeight="27.0" prefWidth="166.0" styleClass="rounded-button" text="Ajouter nouveu notespeaker" />
+            <Button layoutX="987.0" layoutY="79.0" mnemonicParsing="false" onAction="#supprimerkeynote" prefHeight="27.0" prefWidth="95.0" styleClass="rounded-button" text="Supprimer" />
+            <Button layoutX="987.0" layoutY="132.0" mnemonicParsing="false" onAction="#modif_keynote1" prefHeight="27.0" prefWidth="95.0" styleClass="rounded-button" text="Modifier" />
+            <TableView fx:id="tabnote" layoutX="292.0" layoutY="58.0" prefHeight="395.0" prefWidth="668.0">
+              <columns>
+                <TableColumn fx:id="id" prefWidth="75.0" text="id" />
+                <TableColumn fx:id="nomnote" prefWidth="125.59994506835938" text="nom" />
+                  <TableColumn fx:id="institutionnote" prefWidth="152.00009155273438" text="institution" />
+                  <TableColumn fx:id="paysnote" prefWidth="148.0" text="pays" />
+                  <TableColumn fx:id="titrenote" prefWidth="167.20001220703125" text="titre_presentation" />
+              </columns>
+            </TableView>
+            <Label fx:id="err" layoutX="76.0" layoutY="41.0" textFill="RED" />
+         </children>
+      </Pane>
+      <Pane fx:id="paneart" layoutX="-1.0" layoutY="100.0" prefHeight="546.0" prefWidth="1115.0" visible="false">
+         <children>
+            <TableView fx:id="tabart" layoutX="203.0" layoutY="79.0" prefHeight="302.0" prefWidth="293.0">
+              <columns>
+                <TableColumn fx:id="idar" prefWidth="80.00006103515625" text="id" />
+                <TableColumn fx:id="nomar" prefWidth="113.59991455078125" text="nom" />
+                  <TableColumn fx:id="statart" prefWidth="99.20001220703125" text="status" />
+              </columns>
+            </TableView>
+            <Label layoutX="251.0" layoutY="44.0" text="Tous les articles">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tabmem" layoutX="697.0" layoutY="79.0" prefHeight="302.0" prefWidth="293.0">
+              <columns>
+                <TableColumn fx:id="idmem" prefWidth="148.0" text="id" />
+                  <TableColumn fx:id="nommem" prefWidth="144.7999267578125" text="nom" />
+              </columns>
+            </TableView>
+            <Label layoutX="690.0" layoutY="44.0" text="membres comite scientifique">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Button layoutX="462.0" layoutY="443.0" mnemonicParsing="false" onAction="#affecter_art" prefHeight="40.0" prefWidth="160.0" styleClass="rounded-button" text="Affecter" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

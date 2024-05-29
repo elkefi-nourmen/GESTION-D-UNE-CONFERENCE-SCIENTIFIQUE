@@ -1,0 +1,55 @@
+.rounded-button {
+    -fx-background-color: #FFA68D;
+    -fx-background-radius: 30;
+    -fx-text-fill: black;
+}
+
+.rounded-button:hover {
+    -fx-background-color: #57cc99;
+}
+
+.rounded-button:pressed {
+    -fx-background-color: fca311;
+}
+
+.background1 
+{
+    -fx-background-color : #FFA68D;}
+.background2 
+{
+    -fx-background-color : fca311;}
+#loginlayout {
+    -fx-background-color: #ffff;
+}
+/* Table headers */
+.table-view .column-header {
+    -fx-background-color: orange;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* Table cells */
+.table-view .table-row-cell {
+    -fx-background-color: #FEFDED;
+    -fx-text-fill: white;
+}
+
+/* Selected cells */
+.table-view .table-row-cell:selected {
+    -fx-background-color: #ffdab9;
+    -fx-text-fill: black;
+}
+.button2 {
+    -fx-font-size: 24px; /* Initial font size */
+    -fx-background-color:fca311; /* Initial background color */
+    -fx-text-fill: black; /* Initial text color */
+    -fx-padding: 10px 20px; /* Padding for the button */
+    -fx-border-radius: 5px; /* Border radius to make it rounded */
+    -fx-cursor: hand; /* Show hand cursor on hover */
+}
+
+.button2:hover {
+    -fx-text-fill: lightblue; /* Text color on hover */
+}
+
+

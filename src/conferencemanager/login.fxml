@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="loginlayout" prefHeight="590.0" prefWidth="865.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="conferencemanager.LoginController">
+   <children>
+      <AnchorPane layoutX="-1.0" prefHeight="582.0" prefWidth="399.0" styleClass="background2" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="247.0" fitWidth="229.0" layoutX="85.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="125.0" layoutY="322.0" text="Facilitez vos conférences!" textOverrun="CENTER_WORD_ELLIPSIS">
+               <font>
+                  <Font name="Blackadder ITC" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="477.0" layoutY="110.0" text="E-mail :">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="477.0" layoutY="244.0" text="Mot de passe :">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="mail" layoutX="477.0" layoutY="168.0" prefHeight="35.0" prefWidth="274.0" style="-fx-background-radius: 15;" />
+      <PasswordField fx:id="password" layoutX="477.0" layoutY="312.0" prefHeight="35.0" prefWidth="274.0" style="-fx-background-radius: 15;" />
+      <Button layoutX="557.0" layoutY="500.0" mnemonicParsing="false" onAction="#sortir" prefHeight="35.0" prefWidth="150.0" styleClass="rounded-button" text="Sortir" />
+      <Button layoutX="557.0" layoutY="397.0" mnemonicParsing="false" onAction="#login" prefHeight="35.0" prefWidth="150.0" styleClass="rounded-button" text="Sign In" />
+      <Button layoutX="557.0" layoutY="448.0" mnemonicParsing="false" onAction="#switchscene" prefHeight="35.0" prefWidth="150.0" styleClass="rounded-button" text="Sign Up" />
+      <Label fx:id="error" layoutX="449.0" layoutY="365.0" textFill="RED" />
+   </children>
+</AnchorPane>
